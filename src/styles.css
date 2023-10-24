@@ -1,28 +1,22 @@
 *{
-   text-align: center; 
+   
 }
 
 body, html{
     margin: 0;
+    color: whitesmoke;
+    text-align: center; 
 }
 
 .header, .footer{
-    background-color: #ffde73;
+    background-color: #5f7782;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 25px;
-}
-
-.header button{
-    background-color: #ffde73;
-    padding: 15px;
-    border-bottom: none;
-    cursor: pointer;
-}
-
- button:hover{
-    background-color: #eca43b;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .main{
@@ -32,10 +26,18 @@ body, html{
 
 .tab{
     padding: 15px;
+    background-color: #c78a44;
+    text-align: left;
 }
 
-.home{
-    display: block;
+.tab button{
+    border: 1px solid lightgray;
+    display: block; box-sizing: border-box; margin: 0 auto; padding: 8px; width: 80%; max-width: 200px; background: #ffffd0; /* fallback color for old browsers */
+    background: rgba(255, 255, 255, 0.5); border-radius: 8px; color: #fff; text-align: center; text-decoration: none; letter-spacing: 1px; transition: all 0.3s ease-out;
+}
+
+.tab button:hover, .tab button:active{
+    background: #fff; color: #000; transition: all 0.5s ease-in;
 }
 
 .menu{
@@ -43,24 +45,37 @@ body, html{
 }
 
 .home{
-    background-image: url(643.png);
-    background-size: cover;
+    background-color: #dad5d2;
     min-height: 100vh;
     padding: 15px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .background{
-    background-color: #ffde73;
-    width: 50%;
+    background-color: #d8b26e;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(5, 200px);
     gap: 15px;
     flex-direction: column;
     border-radius: 8px;
+}
+
+.background button{
+    padding: 15px;
+    height: 150px;
+    width: 150px;
+    border: 1px solid lightgray;
+    display: block; box-sizing: border-box; margin: 0 auto; padding: 8px; width: 80%; max-width: 200px; background: #fff; /* fallback color for old browsers */
+    background: rgba(255, 255, 255, 0.3); border-radius: 8px; color: #fff; text-align: center; text-decoration: none; letter-spacing: 1px; transition: all 0.3s ease-out;
+}
+
+.background button:hover, .background button:active{
+    background: #fff; color: #000; transition: all 0.5s ease-in;
 }
 
 .homebox{
@@ -72,10 +87,12 @@ body, html{
 }
 
 .note{
-    padding: 15px;
+    padding: 0px 15px 15px 15px;
     margin: 15px;
     border: 1px solid brown;
     border-radius: 24px;
     white-space: pre-line;
-    background-color: lightgoldenrodyellow;
+    background-color: #c78a44;
+    width: 150px;
+    height: 150px;
 }
