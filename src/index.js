@@ -1,30 +1,9 @@
 import './styles.css';
-import Note from './Note.js';
+import { Project , Note } from './Note.js';
 
+const projectArray = [];
 const noteArray = [];
 noteArray.push(new Note('Hello There', "This is not a Note, but I'm another note", '' ,'', ''));
-
-function header() {
-    const element = document.createElement('div');
-    element.classList.add('header');
-
-    const title = document.createElement('h1');
-
-    title.innerHTML = "To-Do-List";
-
-    element.appendChild(title);
-
-    return element;
-  }
-
-function main() {
-  const element = document.createElement('div');
-
-  element.classList.add('main');
-  element.setAttribute('id', 'main');
-
-  return element;
-}
 
 function tab() {
   const element = document.createElement('div');
@@ -41,23 +20,6 @@ function tab() {
 
   element.appendChild(homeElement);
   element.appendChild(buttonElement);
-
-  return element;
-}
-
-function dialogProject() {
-  const element = document.createElement('div');
-  const dialogElement = document.createElement('div');
-
-  const formElement = document.createElement('form');
-  const fieldsetElement = document.createElement('fieldset');
-
-  dialogElement.classList.add('projectModal');
-  dialogElement.setAttribute('id', 'projectModal');
-
-  element.appendChild(dialogElement);
-  dialogElement.appendChild(formElement);
-  formElement.appendChild(fieldsetElement);
 
   return element;
 }
@@ -109,22 +71,7 @@ function home() {
 
   return element;
 }
-
-function footer(){
-  const element = document.createElement('div');
-    element.classList.add('footer');
-
-    const copyElement = document.createElement('p');
-
-    copyElement.innerHTML = 'Copyright @ Siftben 2023';
-
-    element.appendChild(copyElement);
-
-    return element;
-}
   
-document.getElementById('content').appendChild(main());
 document.getElementById('main').appendChild(tab());
-document.getElementById('tab').appendChild(dialogProject());
 document.getElementById('main').appendChild(home());
 
