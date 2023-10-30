@@ -16,22 +16,33 @@
 
             <div class="tab" id="tab">
                 <h2>Projects</h2>
-                <button id="addProjectButton">Add Project</button>
-                <div>
-                    <div class="projectModal modal" id="projectModal">
-                        <form>
-                            <fieldset>
+                <button id="openProjectButton" class="openProjectButton">Add Project</button>
 
+                <div class="projectModal modal" id="projectModal">
+                    <div class="modal-content">
+
+                        <span class="close">&times;</span>
+
+                        <form method="dialog" id="book-form">
+                            <fieldset>
+                                <p>Project Title</p>
+                                <input id="pTitle" type="text" placeholder="Project Title" required>
+                
+                                <p><input class="important" id="important" type="checkbox">Important</p>
+                                  
+                                  
                             </fieldset>
+                            <button id="addProjectButton" type="submit">Add Project</button>
                         </form>
                     </div>
                 </div>
+
             </div>
 
             <div class="home" id="home">
 
                 <div class="background">
-                    <h1>Project Title</h1>
+                    <h1 id="project-title">Project Title</h1>
                 </div>
 
                 <div class="background">
@@ -47,7 +58,33 @@
                     </div>
 
                     <div>
-                        <button>Add Task</button>
+                        <button class="openTaskButton" id="openTaskButton">Add Task</button>
+
+                        <div class="taskModal modal" id="taskModal">
+                            <div class="modal-content">
+        
+                                <span class="close">&times;</span>
+        
+                                <form method="dialog" id="book-form">
+                                    <fieldset>
+                                        <p>Task Name</p>
+                                        <input id="title" type="text" placeholder="Task Name" required>
+
+                                        <p>Task Description</p>
+                                        <input id="title" type="text" placeholder="Task Description">
+
+                                        <p>Due Date</p>
+                                        <input id="title" type="datetime-local">
+                        
+                                        <p><input class="important" id="important" type="checkbox">Important</p>
+                                          
+                                          
+                                    </fieldset>
+                                    <button type="submit" id="addTaskButton">Add Task</button>
+                                </form>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>

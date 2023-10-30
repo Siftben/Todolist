@@ -5,6 +5,22 @@ const projectArray = [];
 const noteArray = [];
 noteArray.push(new Note('Hello There', "This is not a Note, but I'm another note", '' ,'', ''));
 
+const projectTitle = document.getElementById('project-title');
+
+// Get the modal
+var projectModal = document.getElementById("projectModal");
+var taskModal = document.getElementById('taskModal');
+
+// Get the button that opens the modal
+var openProjectBtn = document.getElementById("openProjectButton");
+var taskBtn = document.getElementById("openTaskButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+var span1 = document.getElementsByClassName("close")[1];
+
+var addProjectBtn = document.getElementById("addProjectButton");
+
 function tab() {
   const element = document.createElement('div');
 
@@ -75,3 +91,57 @@ function home() {
 document.getElementById('main').appendChild(tab());
 document.getElementById('main').appendChild(home());
 
+addProjectBtn.addEventListener('click', addProjectClick);
+
+function addProjectClick() {
+  const pTitle = document.getElementById('pTitle').value;
+  console.log('Add Project ' + pTitle);
+
+  if(pTitle === ""){
+    return;
+  }
+
+  document.getElementById('tab').insertBefore(createProject(pTitle), openProjectBtn);
+
+  document.getElementById('pTitle').value = " ";
+  projectModal.style.display = "none";
+}
+
+function createProject(projectName) {
+  const element = document.createElement('button');
+
+  element.classList.add('projectButton');
+
+  element.innerHTML = projectName;
+
+  element.onclick = function(){
+    projectTitle.innerHTML = projectName;
+    console.log(projectName + ' clicked');
+  }
+
+  return element;
+}
+
+// When the user clicks the button, open the modal 
+openProjectBtn.onclick = function() {
+  projectModal.style.display = "block";
+}
+
+taskBtn.onclick = function(){
+  taskModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  projectModal.style.display = "none";
+}
+
+span1.onclick = function() {
+  taskModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == projectModal || event.target == taskModal) {
+    event.target.style.display = "none";
+  }
+}

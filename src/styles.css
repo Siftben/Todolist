@@ -8,6 +8,10 @@ body, html{
     text-align: center; 
 }
 
+fieldset{
+    border: 0px;
+}
+
 .header, .footer{
     background-color: #5f7782;
     display: flex;
@@ -28,16 +32,25 @@ body, html{
     padding: 15px;
     background-color: #c78a44;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.tab button{
+.projectButton{
+    border: 1px solid lightgray;
+    display: block; box-sizing: border-box; margin: 0 auto; padding: 8px; width: 100%; max-width: 200px; background: #ffffd0; /* fallback color for old browsers */
+    background: rgba(255, 255, 255, 0.5); color: #fff; text-align: center; text-decoration: none; letter-spacing: 1px; transition: all 0.2s ease-out;
+}
+
+.openProjectButton , .openTaskButton{
     border: 1px solid lightgray;
     display: block; box-sizing: border-box; margin: 0 auto; padding: 8px; width: 80%; max-width: 200px; background: #ffffd0; /* fallback color for old browsers */
-    background: rgba(255, 255, 255, 0.5); border-radius: 8px; color: #fff; text-align: center; text-decoration: none; letter-spacing: 1px; transition: all 0.3s ease-out;
+    background: rgba(255, 255, 255, 0.5); border-radius: 8px; color: #fff; text-align: center; text-decoration: none; letter-spacing: 1px; transition: all 0.2s ease-out;
 }
 
-.tab button:hover, .tab button:active{
-    background: #fff; color: #000; transition: all 0.5s ease-in;
+.openProjectButton:hover, .openProjectButton:active, .openTaskButton:hover, .openTaskButton:active{
+    background: #fff; color: #000; transition: all 0.25s ease-in;
 }
 
 /* The Modal (background) */
@@ -53,6 +66,7 @@ body, html{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    color: black;
   }
   
   /* Modal Content */
@@ -61,7 +75,15 @@ body, html{
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
+    text-align: left;
+  }
+
+  .important{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 2px;
   }
   
   /* The Close Button */
@@ -105,17 +127,11 @@ body, html{
     border-radius: 8px;
 }
 
-.background button{
+.openTaskButton{
     padding: 15px;
     height: 150px;
     width: 150px;
     border: 1px solid lightgray;
-    display: block; box-sizing: border-box; margin: 0 auto; padding: 8px; width: 80%; max-width: 200px; background: #fff; /* fallback color for old browsers */
-    background: rgba(255, 255, 255, 0.3); border-radius: 8px; color: #fff; text-align: center; text-decoration: none; letter-spacing: 1px; transition: all 0.3s ease-out;
-}
-
-.background button:hover, .background button:active{
-    background: #fff; color: #000; transition: all 0.5s ease-in;
 }
 
 .homebox{
